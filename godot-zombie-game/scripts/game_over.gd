@@ -1,8 +1,8 @@
 extends Control
 
 func _ready():
-	$CenterContainer/VBoxContainer/RestartButton.connect("pressed", self, "_on_RestartButton_pressed")
-	$CenterContainer/VBoxContainer/MainMenuButton.connect("pressed", self, "_on_MainMenuButton_pressed")
+	$CenterContainer/VBoxContainer/RestartButton.connect("pressed", Callable(self,"_on_RestartButton_pressed"))
+	$CenterContainer/VBoxContainer/MainMenuButton.connect("pressed", Callable(self,"_on_MainMenuButton_pressed"))
 
 func set_score(score):
 	$CenterContainer/VBoxContainer/ScoreLabel.text = "Score: " + str(score)

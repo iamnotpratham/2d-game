@@ -6,7 +6,7 @@ var damage = 1
 
 func _ready():
 	velocity = Vector2.from_angle(rotation) * SPEED
-	connect("body_entered", self, "_on_Bullet_body_entered")
+	connect("body_entered", Callable(self, "_on_Bullet_body_entered"))
 
 func _physics_process(delta):
 	position += velocity * delta

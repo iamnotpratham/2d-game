@@ -5,7 +5,7 @@ enum PowerUpType { SPEED_BOOST, DAMAGE_BOOST }
 var type = PowerUpType.SPEED_BOOST
 
 func _ready():
-	connect("body_entered", self, "_on_PowerUp_body_entered")
+	connect("body_entered", Callable(self,"_on_PowerUp_body_entered"))
 
 func _on_PowerUp_body_entered(body):
 	if body.is_in_group("player"):
